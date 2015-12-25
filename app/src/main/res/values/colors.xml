@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="form_text_color_light_right">#ccffffff</color>
+    <color name="color_gold">#EAC281</color>
+    <color name="color_half_gold">#88EAC281</color>
+
+</resources>

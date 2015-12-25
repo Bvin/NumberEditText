@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="edit_text" type="id"/>
+    <item name="zoom_out" type="id"/>
+    <item name="zoom_in" type="id"/>
+</resources>
