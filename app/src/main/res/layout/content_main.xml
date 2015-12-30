@@ -24,23 +24,24 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="163dp"/>
 
-    <cn.bvin.widget.number_edittext.NumberEditText
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/gold_border_shape"
-        android:id="@+id/view2"
-        android:hint="年龄"
-        android:layout_below="@+id/view"
-        android:layout_centerHorizontal="true"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
         android:textColor="@android:color/white"
         android:id="@+id/textView"
+        android:layout_margin="10dp"
         android:layout_below="@+id/view"
         android:layout_centerHorizontal="true"/>
+
+    <cn.bvin.widget.number_edittext.NumberEditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="@drawable/gold_border_shape"
+        android:id="@+id/view2"
+        android:hint="年龄"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/view"
+        android:layout_alignStart="@+id/view"/>
 
 </RelativeLayout>
