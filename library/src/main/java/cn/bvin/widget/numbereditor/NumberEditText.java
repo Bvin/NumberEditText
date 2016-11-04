@@ -99,30 +99,10 @@ public class NumberEditText extends LinearLayout implements TextWatcher, View.On
     }
 
     private void parseAttributeSet(Context context, AttributeSet set) {
-        int[] attrs = new int[]{android.R.attr.inputType, android.R.attr.text
-                , android.R.attr.textColor, android.R.attr.hint};
-        TypedArray typedArray = context.obtainStyledAttributes(set, attrs);
-        for (int i = 0; i < attrs.length; i++) {
-            switch (attrs[i]) {
-                case android.R.attr.inputType:
-                    //SimpleLogger.log_e("parseAttributeSet",attrs[i]);
-                    //mInputType = typedArray.getInt(i, EditorInfo.TYPE_NULL);
-                    break;
-                case android.R.attr.hint:
-                    //SimpleLogger.log_e("parseAttributeSet",attrs[i]);
-                    mHint = typedArray.getString(i);
-                    break;
-                case android.R.attr.text:
-                    mText = typedArray.getString(i);
-                    break;
-                case android.R.attr.textColor:
-                    //SimpleLogger.log_e("parseAttributeSet",attrs[i]);
-                    mTextColor = typedArray.getColor(i, 0);
-                    break;
-            }
+        final TypedArray a = getContext().obtainStyledAttributes(
+                set, R.styleable.NumberEditText, 0, 0);
 
-        }
-        typedArray.recycle();
+        a.recycle();
     }
 
     private void setupViews() {

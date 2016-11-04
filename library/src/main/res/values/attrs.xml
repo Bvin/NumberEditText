@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NumberEditText">
+        <attr name="leftControlImage" format="reference"/>
+        <attr name="rightControlImage" format="reference"/>
+        <attr name="centerEditBackground" format="reference"/>
+        <attr name="textColor" format="color|reference"/>
+        <attr name="textSize" format="dimension|reference"/>
+        <attr name="hint" format="string|reference"/>
+    </declare-styleable>
+</resources>

@@ -39,7 +39,8 @@
         android:layout_height="30dp"
         android:background="@drawable/gold_border_shape"
         android:id="@+id/view2"
-        android:hint="年龄"
+        app:hint="年龄"
+        app:textColor="#5f6"
         android:layout_below="@+id/textView"
         android:layout_alignLeft="@+id/view"
         android:layout_alignStart="@+id/view"/>
