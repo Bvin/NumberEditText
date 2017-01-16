@@ -16,10 +16,8 @@
 
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
 
 group='com.github.bvin'
-version = "0.1"
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -43,81 +41,4 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
-}
-
-def siteUrl = 'https://github.com/Bvin/NumberEditText'    // project homepage
-def gitUrl = 'https://github.com/Bvin/NumberEditText.git' // project git
-
-group = "cn.bvin.lib.widget"
-
-install {
-    repositories.mavenInstaller {
-        // This generates POM.xml with proper parameters
-        pom {
-            project {
-                packaging 'aar'
-                name 'NumberEditor'
-                url siteUrl
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        id 'bvin'
-                        name 'Bvin H.'
-                        email 'bvin@live.cn'
-                    }
-                }
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
-                    url siteUrl
-                }
-            }
-        }
-    }
-}
-
-task androidSourcesJar(type: Jar){
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-
-task androidJavadoc(type: Javadoc){
-    source = android.sourceSets.main.java.srcDirs
-    classpath += files(android.bootClasspath)
-}
-
-task androidJavadocJar(type: Jar, dependsOn: androidJavadoc) {
-    classifier = 'javadoc'
-    from androidJavadoc.destinationDir
-}
-
-android.libraryVariants.all { variant ->
-    def name = variant.name.capitalize()
-    task "jar${name}"(type: Jar, dependsOn: variant.javaCompile) {
-        from variant.javaCompile.destinationDir
-    }
-}
-
-artifacts.add('archives', androidJavadocJar)
-artifacts.add('archives', androidSourcesJar)
-
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
-    configurations = ['archives']
-    pkg {
-        repo = "maven"
-        name = "number-editor"                // project name in jcenter
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = ["Apache-2.0"]
-        publish = true
-    }
 }
