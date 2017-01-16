@@ -1,6 +1,8 @@
 # NumberEditText
 数值控件，可通过增减微调数值，也可手动输入。中间的输入框可以手动输入，两边的加减可以微调数值。
 
+[![](https://jitpack.io/v/Bvin/NumberEditText.svg)](https://jitpack.io/#Bvin/NumberEditText)
+
 ![截图](https://raw.githubusercontent.com/Bvin/NumberEditText/master/sample/src/main/assets/Screenshot1.jpeg)
 
 1.设置增减量
